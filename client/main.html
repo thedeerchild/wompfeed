@@ -3,6 +3,11 @@
     <div class="small-12 columns">
       <h1>Home</h1>
       <a href="{{pathFor 'newPost'}}" class="button">New Post</a>
+      <ul>
+        {{#each posts}}
+          <li>{{title}} by {{author}}</li>
+        {{/each}}
+      </ul>
     </div>
   </div>
 </template>
