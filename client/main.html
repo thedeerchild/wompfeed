@@ -5,7 +5,7 @@
       <a href="{{pathFor 'newPost'}}" class="button">New Post</a>
       <ul>
         {{#each posts}}
-          <li>{{title}} by {{author}}</li>
+          <li><a href="{{pathFor 'showPost'}}">{{title}}</a> by {{author}}</li>
         {{/each}}
       </ul>
     </div>
