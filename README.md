@@ -1,0 +1,4 @@
+wompfeed
+========
+
+Worst. Idea. Ever.
