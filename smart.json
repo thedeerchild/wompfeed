@@ -1,3 +1,6 @@
 {
-  "packages": {}
+  "packages": {
+    "foundation5-sass": {},
+    "iron-router": {}
+  }
 }
