@@ -8,6 +8,9 @@
           <li><a href="{{pathFor 'showPost'}}">{{title}}</a> by {{author}}</li>
         {{/each}}
       </ul>
+      {{#with currentUser}}
+        <a href="{{pathFor 'showUser'}}">My Profile</a>
+      {{/with}}
     </div>
   </div>
 </template>
