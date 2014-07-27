@@ -95,12 +95,12 @@ Editor.prototype = {
           var ul = $contentItem.find('.gif-searcher__suggest > ul');
           ul.empty();
           $.each(data.best_guess, function(index, item) {
-                  var list_item = $('<li>'+item+'</li>')
-                  ul.append(list_item);
-                  list_item.click(function() {
-                          gif_searcher.getImages(item)
-                      });
-              });
+            var list_item = $('<li>'+item+'</li>')
+            ul.append(list_item);
+            list_item.click(function() {
+              gif_searcher.getImages(item)
+            });
+          });
         });
       }
     });
