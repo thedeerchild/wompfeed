@@ -38,12 +38,34 @@
 .gif-searcher__show {
   @extend %gif-searcher__pane;
 
+  position: relative;
   padding: 0;
   height: auto;
   overflow-y: scroll;
-  
 
   > img {
     width: 100%;
+  }
+}
+.gif-searcher__settings {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 0 #000;
+
+  a {
+    color: white;
+    top: 0px;
+
+    a:hover {
+      color: white;
+      position: relative;
+      top: -2px;
+    }
   }
 }
