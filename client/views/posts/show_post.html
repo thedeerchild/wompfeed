@@ -1,12 +1,18 @@
 <template name="showPost">
-  <div class="hero">
-      <img class="hero__background" src="//localhost/wompfeed_static/images/heavybreathingcat.gif">
-      <div class="row">
-       <div class="small-12 columns">
-      <h1 class="hero__title">{{title}}</h1>
+    {{#if headerImage}}
+      <div class="hero">
+        <img class="hero__background" src="//localhost/wompfeed_static/images/heavybreathingcat.gif">
+        <div class="row">
+         <div class="small-12 columns">
+            <h1 class="hero__title">{{title}}</h1>
+          </div>
+        </div>
       </div>
+    {{else}}
+      <div class="hero-no-background">
+        <h1 class="hero__title-no-background">{{title}}</h1>
       </div>
-    </div>
+    {{/if}}
     <article class="article">
       
       {{#unless anonymous}}

@@ -1,5 +1,4 @@
 <template name="editPost">
-  <img class="hero__background" src="//localhost/wompfeed_static/images/heavybreathingcat.gif">
   <div class="editor__items" data-editor-items></div>
 
   <script id="content-template" type="text/x-handlebars-template">
@@ -26,7 +25,7 @@
       <textarea class="content-item__body" placeholder="Add text">{{body}}</textarea>
 
       <span class="editor__handle"></span>
-      <span class="editor__icon delete"></span>
+      <span class="editor__icon delete" data-editor-delete></span>
     </div>
   </script>
 </template>

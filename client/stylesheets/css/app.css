@@ -5648,13 +5648,20 @@ th.hide-for-touch {
   font-weight: 100;
   color: #424242; }
 
+.article__body img {
+  width: 100%; }
+
 .hero {
   position: relative;
   width: 100%;
   padding: 2em 0;
   overflow: hidden;
-  /*height:85vh;*/
-  height: 520px; }
+  height: 85vh; }
+
+.hero-no-background {
+  position: relative;
+  width: 100%;
+  padding: 2em 0; }
 
 .hero__background {
   position: absolute;
@@ -5673,6 +5680,12 @@ th.hide-for-touch {
   text-shadow: 1px 1px 1px #838383;
   padding-top: 1.7em;
   padding-bottom: 3em; }
+
+.hero__title-no-background {
+  font-family: "motor", Helvetica, Arial, sans-serif;
+  position: relative;
+  text-align: center;
+  font-size: 4.5em; }
 
 .editor {
   padding-top: 3em;

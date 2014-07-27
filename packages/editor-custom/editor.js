@@ -9,7 +9,6 @@ Editor.prototype = {
     this.$itemsContainer = elem.find('[data-editor-items]');
     this.$title          = elem.find('[data-editor-title]');
     this.$addButton      = elem.find('[data-editor-add]');
-    this.$publishButton  = elem.find('[data-editor-publish]');
 
     this.lastSearch = '';
 
@@ -24,17 +23,17 @@ Editor.prototype = {
       this.deserialize(data);
     }
     else {
-      this.addItem();
+      // this.addItem();
     }
   },
   events: function() {
     var _this = this;
 
     // Make each item sortable
-    this.$itemsContainer.sortable({
-      handle: '[data-editor-handle]',
-      placeholder: 'editor__placeholder'
-    });
+    // this.$itemsContainer.sortable({
+    //   handle: '[data-editor-handle]',
+    //   placeholder: 'editor__placeholder'
+    // });
 
     // Block carriage returns on title editor, blur the field instead
     this.$title.on('keypress', function(event) {
@@ -53,11 +52,6 @@ Editor.prototype = {
       _this.deleteItem($(this));
     });
 
-    // Serialize and save when publish button is clicked
-    this.$publishButton.click(function() {
-      _this.save();
-      return false;
-    })
   },
   addItem: function(data) {
     var _this = this;
@@ -67,6 +61,13 @@ Editor.prototype = {
       .hide(0)
       .slideDown(250);
     var gif_searcher = new GIFSearcher($contentItem.find('.gif-searcher'), this);
+
+    this.$itemsContainer.sortable({
+      handle: '[data-editor-handle]',
+      placeholder: 'editor__placeholder'
+    });
+
+    $('textarea:visible').expanding();
 
     $contentItem.find('.content-item__body').on('keypress', function(event) {
       if (event.which == '.'.charCodeAt(0) || event.which == '?'.charCodeAt(0) || event.which == "!".charCodeAt(0)) {
@@ -87,7 +88,9 @@ Editor.prototype = {
     });
   },
   deleteItem: function(elem) {
-    elem.closest('.content-item').remove();
+    elem.closest('.content-item').slideUp(400, function(){
+      $(this).remove();
+    });
   },
   serialize: function() {
     var json = [];

@@ -1,9 +1,18 @@
 <template name="newPost">
   <form>
+    <div class="hero">
+      <img class="hero__background" src="http://placehold.it/500x500&text=%20">
+      <div class="row">
+       <div class="small-12 columns">
+          <h1 class="hero__title" name="title" contenteditable>Click to Add Title</h1>
+        </div>
+      </div>
+    </div>
+
     <div class="editor row" data-editor>
       <div class="medium-10 large-8 medium-centered columns">
         <div class="editor__title">
-          <input type="text" name="title" placeholder="Name Your Post" />
+          <textarea name="introText" placeholder="Type something..."></textarea>
         </div>
         {{> editPost}}
         <div class="editor__controls">
