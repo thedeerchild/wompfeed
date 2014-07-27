@@ -47,7 +47,7 @@
   width: 100%;
   padding: 2em 0;
   overflow: hidden;
-  height:520px;
+  height: 100%;
   margin-bottom: 1em;
 
   .header + & {
@@ -60,6 +60,7 @@
     top: -260px;
     left: 0;
     width: 500%;
+    height:100%;
     z-index: -1;
     // Where the magic happens
     -webkit-filter: blur(20px);
