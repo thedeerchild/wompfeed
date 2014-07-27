@@ -16,9 +16,8 @@
      text-align: center;
      font-weight: 100;
 
-
-     &:hover{
-         color:$secondary-color;
+    &:hover{
+	color:$complementary-color;
 
      }
   }
@@ -43,7 +42,7 @@
     font-weight: 100;
 
     &:hover{
-      color:$secondary-color;
+	color:$complementary-color;
 
     }
   }
