@@ -8,8 +8,12 @@ Editor.prototype = {
     this.$container      = elem;
     this.$itemsContainer = elem.find('[data-editor-items]');
     this.$title          = elem.find('[data-editor-title]');
+    this.$subtitle       = elem.find('[data-editor-subtitle]');
+    this.$hero_image     = elem.find('[hero-background]');
+    this.$hero_gif_search= elem.find('[hero-gif-search]');
     this.$addButton      = elem.find('[data-editor-add]');
 
+    console.log(this.$title);
     this.lastSearch = '';
 
     // Content item template
@@ -23,6 +27,20 @@ Editor.prototype = {
       this.deserialize(data);
     }
     else {
+        // add gif searcher
+        var $contentItem = $(this.contentItem(data || {}));
+        $contentItem.find('.gif-searcher').clone().appendTo(this.$hero_gif_search);
+        var gif_searcher = new GIFSearcher(this.$hero_gif_search.find('.gif-searcher'), this);
+        var _this = this;
+        gif_searcher.showImage = function(src) {
+            gif_searcher.views.search.hide();
+            gif_searcher.views.results.hide();
+            gif_searcher.views.image.hide();
+
+            if (typeof src !== 'undefined') {
+                _this.$hero_image.attr('src', src);
+            }
+        };
       // this.addItem();
     }
   },

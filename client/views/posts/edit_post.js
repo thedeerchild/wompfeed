@@ -1,4 +1,4 @@
-Template.editPost.rendered = function() {
+Template.editPostForm.rendered = function() {
   $('textarea:visible').expanding();
 
   if (window.editor === undefined) {
