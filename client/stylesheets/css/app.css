@@ -6106,12 +6106,13 @@ input.congrats__url {
   .post-grid img {
     display: block;
     margin-bottom: 0.5em; }
-  .post-grid .grid-img {
-    width: 100%;
-    padding-top: 75%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover; }
+
+.grid-img {
+  width: 100%;
+  padding-top: 75%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 @media only screen and (max-width: 40em) {
   .profile__header {
