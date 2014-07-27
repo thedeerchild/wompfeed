@@ -3,3 +3,5 @@ Template.home.helpers({
     return Meteor.users.find();
   }
 })
+
+try{Typekit.load();}catch(e){}
