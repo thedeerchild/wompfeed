@@ -1,7 +1,8 @@
 <template name="postsGridItem">
   <li><a href="{{pathFor 'showPost'}}">
     {{#if headerImage}}
-      <img src="{{headerImage}}">
+      <div class="grid-img" style="background-image:url({{headerImage}});"></div>
+      <!-- <img src="{{headerImage}}"> -->
     {{else}}
       <img src="http://placehold.it/400x300">
     {{/if}}

@@ -81,6 +81,14 @@ Editor.prototype = {
       .slideDown(250);
     var gif_searcher = new GIFSearcher($contentItem.find('.gif-searcher'), this);
 
+    if (data) {
+        $contentItem.find('.content-item__title').val(data.title)
+        $contentItem.find('.content-item__body').val(data.body)
+            if (data.image)
+                gif_searcher.showImage(data.image);
+
+    }
+
     this.$itemsContainer.sortable({
       handle: '[data-editor-handle]',
       placeholder: 'editor__placeholder'

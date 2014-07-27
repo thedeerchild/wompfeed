@@ -11,6 +11,9 @@ Template.showUser.helpers({
         'services.twitter.profile_image_url': true
       }});
   },
+  coolPoints: function() {
+    return this.points || '0';
+  },
   posts: function() {
     return Posts.find({userId: this._id, anonymous: false})
   },
