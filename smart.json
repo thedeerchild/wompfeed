@@ -2,6 +2,7 @@
   "packages": {
     "foundation5-sass": {},
     "iron-router": {},
-    "spin": {}
+    "spin": {},
+    "jquery-masonry": {}
   }
 }

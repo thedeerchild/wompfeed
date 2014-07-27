@@ -55,7 +55,7 @@ Editor.prototype = {
     // });
 
     // Block carriage returns on title editor, blur the field instead
-    this.$title.on('keypress', function(event) {
+    this.$container.on('keypress', '[data-editor-title], .content-item__title', function(event) {
       if (event.which === 13) {
         $(this).blur();
       }
@@ -207,6 +207,7 @@ GIFSearcher.prototype = {
         var $item = $('<li><img src="'+image.images.original.url+'"></li>');
         $container.append($item);
       });
+      // $container.masonry({itemSelector: 'li'});
     }
   },
   showImage: function(src) {
@@ -228,7 +229,7 @@ GIFSearcher.prototype = {
             query = encodeURI(query.replace(" ","+"));
             
             var queryURL = 'http://api.giphy.com/v1/gifs/search'
-            , params   = {q: query, limit: 9, api_key: 'dc6zaTOxFJmzC'}
+            , params   = {q: query, limit: 24, api_key: 'dc6zaTOxFJmzC'}
             
             var search = $.getJSON(queryURL, params);
             return search;
