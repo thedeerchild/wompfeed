@@ -87,23 +87,24 @@ Editor.prototype = {
 
     $('textarea:visible').expanding();
 
-    $contentItem.find('.content-item__body').on('keypress', function(event) {
-      if (event.which == '.'.charCodeAt(0) || event.which == '?'.charCodeAt(0) || event.which == "!".charCodeAt(0)) {
-        var content = $(this).val();
-        var request = $.getJSON('http://guarded-caverns-4613.herokuapp.com/ner', {text: content});
-        request.done(function(data) {
-          var ul = $contentItem.find('.gif-searcher__suggest > ul');
-          ul.empty();
-          $.each(data.best_guess, function(index, item) {
-            var list_item = $('<li>'+item+'</li>')
-            ul.append(list_item);
-            list_item.click(function() {
-              gif_searcher.getImages(item)
-            });
-          });
-        });
-      }
-    });
+    cb_suggest = function(event) {
+        if (event.which == '.'.charCodeAt(0) || event.which == '?'.charCodeAt(0) || event.which == "!".charCodeAt(0) || event.which == " ".charCodeAt(0)) {
+            var content = $contentItem.find('.content-item__title').val() + ' . ' + $contentItem.find('.content-item__body').val();
+            var request = $.getJSON('http://guarded-caverns-4613.herokuapp.com/ner', {text: content});
+            request.done(function(data) {
+                    var ul = $contentItem.find('.gif-searcher__suggest > ul');
+                    ul.empty();
+                    $.each(data.best_guess, function(index, item) {
+                            var list_item = $('<li>'+item+'</li>');
+                            ul.append(list_item);
+                            list_item.click(function() {
+                                    gif_searcher.getImages(item)
+                            });
+                    });
+                });
+        }};
+     $contentItem.find('.content-item__body').on('keypress', cb_suggest);
+     $contentItem.find('.content-item__title').on('keypress', cb_suggest);
   },
   deleteItem: function(elem) {
     elem.closest('.content-item').slideUp(400, function(){
