@@ -19,9 +19,11 @@
   .profile__header__avatar {
     position: relative;
     display: inline-block;
+    max-width: 200px;
 
     img {
       border-radius: 1000px;
+      width: 100%;
     }
     span {
       position: absolute;

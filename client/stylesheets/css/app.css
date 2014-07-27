@@ -5825,7 +5825,8 @@ input.congrats__url {
 .editor-hero__title {
   text-align: center;
   position: relative;
-  z-index: 2; }
+  z-index: 2;
+  color: white; }
 
 .editor__deck {
   font-size: 1.5rem;
@@ -5967,11 +5968,38 @@ input.congrats__url {
         clear: both; }
 
 .gif-searcher__show {
+  position: relative;
   padding: 0;
   height: auto;
   overflow-y: scroll; }
   .gif-searcher__show > img {
     width: 100%; }
+
+.gif-searcher__settings {
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 0 #000;
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -ms-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear; }
+  .gif-searcher__show:hover .gif-searcher__settings {
+    opacity: 1;
+    color: #ccc; }
+  .gif-searcher__settings a {
+    color: white;
+    top: 0px; }
+    .gif-searcher__settings a a:hover {
+      color: white;
+      position: relative;
+      top: -2px; }
 
 .header {
   *zoom: 1;
@@ -6053,9 +6081,11 @@ input.congrats__url {
 
 .profile__header__avatar {
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  max-width: 200px; }
   .profile__header__avatar img {
-    border-radius: 1000px; }
+    border-radius: 1000px;
+    width: 100%; }
   .profile__header__avatar span {
     position: absolute;
     bottom: -0.3em;

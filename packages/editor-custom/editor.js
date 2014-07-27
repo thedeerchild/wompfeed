@@ -227,7 +227,7 @@ GIFSearcher.prototype = {
             query = encodeURI(query.replace(" ","+"));
             
             var queryURL = 'http://api.giphy.com/v1/gifs/search'
-            , params   = {q: query, limit: 9, api_key: 'dc6zaTOxFJmzC'}
+            , params   = {q: query, limit: 24, api_key: 'dc6zaTOxFJmzC'}
             
             var search = $.getJSON(queryURL, params);
             return search;
