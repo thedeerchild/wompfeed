@@ -14,8 +14,7 @@ Meteor.methods({
       throw new Meteor.Error(422, 'Please fill in some content');
 
     var post = _.extend(_.pick(postAttrs, 'title', 'content', 'anonymous'), {
-      userId: user._id, 
-      author: postAttrs.anonymous ? 'Anonymous' : user.profile.name,
+      userId: user._id,
       submitted: new Date().getTime()
     });
 
