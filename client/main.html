@@ -20,15 +20,10 @@
         <img src="http://placehold.it/16x9" alt="">
       </section>
 
-      {{#with currentUser}}
-        <a href="{{pathFor 'me'}}">My Profile</a>
-      {{/with}}
-      <a href="{{pathFor 'newPost'}}" class="button">New Post</a>
-
       <section>
         <h2>What's Hot</h2>
 
-        {{> postsList}}
+        {{> postsGrid}}
       </section>
     </div>
   </div>

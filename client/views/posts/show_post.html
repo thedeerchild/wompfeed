@@ -1,35 +1,51 @@
 <template name="showPost">
-    {{#if headerImage}}
-      <div class="hero">
-        <img class="hero__background" src="//localhost/wompfeed_static/images/heavybreathingcat.gif">
-        <div class="row">
-         <div class="small-12 columns">
-            <h1 class="hero__title">{{title}}</h1>
-          </div>
+  {{#if true}}
+    <div class="congrats">
+      <div class="row">
+        <div class="hide-for-small medium-4 columns">
+          <img src="/images/white-rafi.svg" class="congrats__rafi">
+        </div>
+        <div class="small-12 medium-8 columns">
+          <p class="congrats__title">Nice work!</p>
+          <p>Your post is ready to be seen by the hungry, frothing masses. You can use this URL to send it to your friends:</p>
+          <input class="congrats__url" type="text" value="{{shareUrl}}">
+          <p>You also earned <strong>100 Cool Points</strong> for publishing this post.</p>
         </div>
       </div>
-    {{else}}
-      <div class="hero-no-background">
-        <h1 class="hero__title-no-background">{{title}}</h1>
-      </div>
-    {{/if}}
-    <article class="article">
-      
-      {{#unless anonymous}}
-        <header class="row">
-          <div class="small-12 columns title-background text-center">
-            <p class="article__author">by {{author}}</p>
-          </div>
-        </header>
-      {{/unless}}
+    </div>
+  {{/if}}
 
-      <div class="row article__body">
-
-        <div class="small-12 medium-10 large-8 large-centered medium-centered columns">
-          {{#each content}}
-            {{> postPart}}
-          {{/each}}
+  {{#if headerImage}}
+    <div class="hero">
+      <img class="hero__background" src="//localhost/wompfeed_static/images/heavybreathingcat.gif">
+      <div class="row">
+       <div class="small-12 columns">
+          <h1 class="hero__title">{{title}}</h1>
         </div>
       </div>
-    </article>
+    </div>
+  {{else}}
+    <div class="hero-no-background">
+      <h1 class="hero__title-no-background">{{title}}</h1>
+    </div>
+  {{/if}}
+  <article class="article">
+    
+    {{#unless anonymous}}
+      <header class="row">
+        <div class="small-12 columns title-background text-center">
+          <p class="article__author">by {{author}}</p>
+        </div>
+      </header>
+    {{/unless}}
+
+    <div class="row article__body">
+
+      <div class="small-12 medium-10 large-8 large-centered medium-centered columns">
+        {{#each content}}
+          {{> postPart}}
+        {{/each}}
+      </div>
+    </div>
+  </article>
 </template>
