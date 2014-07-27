@@ -4,12 +4,11 @@
   <script id="content-template" type="text/x-handlebars-template">
     <div class="content-item">
       <!-- Title -->
-      <input type="text" class="content-item__title" placeholder="Add a title (optional)" value="{{title}}">
+      <textarea class="content-item__title" placeholder="Add a title (optional)">{{title}}</textarea>
       <!-- Image -->
       <div class="gif-searcher">
         <div class="gif-searcher__search">
-          <p>Search for a GIF:</p>
-          <input type="text">
+          <input type="text" placeholder="Search for a GIF">
         </div>
         <div class="gif-searcher__results">
           <ul></ul>
@@ -22,10 +21,10 @@
         </div>
       </div>
       <!-- Body -->
-      <textarea class="content-item__body" placeholder="Add text">{{body}}</textarea>
+      <textarea class="content-item__body" placeholder="Add text (optional)">{{body}}</textarea>
 
       <span class="editor__handle"></span>
-      <span class="editor__icon delete" data-editor-delete></span>
+      <span class="editor__icon delete" data-editor-delete>×</span>
     </div>
   </script>
 </template>

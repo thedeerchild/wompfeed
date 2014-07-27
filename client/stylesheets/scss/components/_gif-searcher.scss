@@ -1,0 +1,49 @@
+// GIF searcher
+.gif-searcher {
+  > img {
+    width: 100%;
+  }
+
+  -webkit-transition: height 1s linear;
+}
+%gif-searcher__pane {
+  background: lighten($primary-color, 15%);
+  padding: 1em;
+}
+.gif-searcher__search {
+  @extend %gif-searcher__pane;
+
+  height: auto;
+
+  p {
+    text-align: center;
+  }
+  input {
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    margin: 0;
+  }
+}
+.gif-searcher__results {
+  @extend %gif-searcher__pane;
+
+  height: 300px;
+  overflow-y: scroll;
+
+  ul {
+    @include block-grid(3);
+  }
+}
+.gif-searcher__show {
+  @extend %gif-searcher__pane;
+
+  padding: 0;
+  height: auto;
+  overflow-y: scroll;
+  
+
+  > img {
+    width: 100%;
+  }
+}
