@@ -60,19 +60,28 @@ Editor.prototype = {
     })
   },
   addItem: function(data) {
+    var _this = this
     var $contentItem = $(this.contentItem(data || {}));
     $contentItem
       .appendTo(this.$itemsContainer)
       .hide(0)
       .slideDown(250);
-    new GIFSearcher($contentItem.find('.gif-searcher'), this);
+    var gif_searcher = new GIFSearcher($contentItem.find('.gif-searcher'), this);
 
     this.$container.find('.content-item__body').on('keypress', function(event) {
-      if (event.which == 46) {
-        var content = this.textContent;
+      if (event.which == '.'.charCodeAt(0) || event.which == '?'.charCodeAt(0) || event.which == "!".charCodeAt(0)) {
+        var content = $(this).val();
         var request = $.getJSON('http://guarded-caverns-4613.herokuapp.com/ner', {text: content});
         request.done(function(data) {
-          console.log(data);
+          var ul = _this.$container.find('.gif-searcher__suggest > ul');
+          ul.empty();
+          $.each(data.best_guess, function(index, item) {
+                  var list_item = $('<li>'+item+'</li>')
+                  ul.append(list_item);
+                  list_item.click(function() {
+                          gif_searcher.getImages(item)
+                      });
+              });
         });
       }
     });
@@ -90,11 +99,9 @@ Editor.prototype = {
       });
     });
 
-    console.log(json);
     return json;
   },
   save: function() {
-    // SAVE HEYA
     return this.serialize();
   },
   deserialize: function(data) {
@@ -112,7 +119,8 @@ var GIFSearcher = function($elem, editor) {
   this.views = {
     search:  this.$container.children('.gif-searcher__search'),
     results: this.$container.children('.gif-searcher__results'),
-    image:   this.$container.children('.gif-searcher__show')
+    image:   this.$container.children('.gif-searcher__show'),
+    suggest: this.$container.children('.gif-searcher__suggest')
   }
   this.query = '';
 
@@ -136,19 +144,6 @@ GIFSearcher.prototype = {
 
       var searchTerm = this.value;
       var search = _this.getImages(searchTerm);
-      search
-        .done(function(data, textStatus, jqxhr) {
-          if (data.data.length === 0) {
-            _this.views.search.append('<p>Couldn\'t find any images :( Try again?');
-          }
-          else {
-            _this.editor.lastSearch = searchTerm;
-            _this.showResults(data);
-          }
-        })
-        .fail(function(jqxhr, textStatus, error) {
-          console.log(textStatus+', '+error);
-        });
     });
 
     this.views.results.on('click', 'li', function() {
@@ -179,6 +174,7 @@ GIFSearcher.prototype = {
     }
     else {
       var $container = this.views.results.children('ul').eq(0);
+      $container.empty();
       $.each(data.data, function(i, image) {
         var $item = $('<li><img src="'+image.images.original.url+'"></li>');
         $container.append($item);
@@ -196,16 +192,30 @@ GIFSearcher.prototype = {
   },
 
   getImages: function(query) {
-    // Set a default
-    if (typeof query === 'undefined' || query == '') query = this.query || 'cats';
-    // Encode it
-    query = encodeURI(query.replace(" ","+"));
-
-    var queryURL = 'http://api.giphy.com/v1/gifs/search'
-      , params   = {q: query, limit: 9, api_key: 'dc6zaTOxFJmzC'}
-
-    var search = $.getJSON(queryURL, params);
-    return search;
+        var _this = this;
+        fn = function() {
+            // Set a default
+            if (typeof query === 'undefined' || query == '') query = this.query || 'cats';
+            // Encode it
+            query = encodeURI(query.replace(" ","+"));
+            
+            var queryURL = 'http://api.giphy.com/v1/gifs/search'
+            , params   = {q: query, limit: 9, api_key: 'dc6zaTOxFJmzC'}
+            
+            var search = $.getJSON(queryURL, params);
+            return search;
+        }().done(function(data, textStatus, jqxhr) {
+                if (data.data.length === 0) {
+                    _this.views.search.append('<p>Couldn\'t find any images :( Try again?');
+                }
+                else {
+                    _this.editor.lastSearch = query;
+                    _this.showResults(data);
+                }
+            })
+        .fail(function(jqxhr, textStatus, error) {
+                console.log(textStatus+', '+error);
+            });
   }
 }
 

@@ -25,11 +25,11 @@
 
 // GIF searcher
 .gif-searcher {
-  @extend %editor__item;
-
   > img {
     width: 100%;
   }
+
+  -webkit-transition: height 1s linear;
 }
 %gif-searcher__pane {
   background: #ccc;
@@ -51,11 +51,17 @@
 .gif-searcher__show {
   @extend %gif-searcher__pane;
   padding: 0;
+
+  overflow-y: scroll;
+  
+
+  > img {
+    width: 100%;
+  }
 }
 
 // Placeholder for dragging
 .editor__placeholder {
-  @extend %editor__item;
   background: #f4ebd8;
   border: 2px dashed #b5b582;
   height: 100px;

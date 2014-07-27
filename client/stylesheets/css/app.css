@@ -5620,8 +5620,10 @@ th.hide-for-touch {
     height: 1em;
     margin: 0; }
 
-.gif-searcher > img {
-  width: 100%; }
+.gif-searcher {
+  -webkit-transition: height 1s linear; }
+  .gif-searcher > img {
+    width: 100%; }
 
 .gif-searcher__search, .gif-searcher__results, .gif-searcher__show {
   background: #ccc;
@@ -5655,7 +5657,10 @@ th.hide-for-touch {
         clear: both; }
 
 .gif-searcher__show {
-  padding: 0; }
+  padding: 0;
+  overflow-y: scroll; }
+  .gif-searcher__show > img {
+    width: 100%; }
 
 .editor__placeholder {
   background: #f4ebd8;
