@@ -1,0 +1,129 @@
+// Editor body
+.editor {
+  padding-top: 3em;
+  padding-bottom: 10em;
+}
+
+// Base styles for items
+.content-item {
+  position: relative;
+  margin: {
+    top: 2em;
+    bottom: 2em;
+  }
+  padding: {
+    left: 50px;
+    right: 50px;
+  }
+
+  > textarea {
+    width: 100%;
+    height: 1em;
+    margin: 0;
+  }
+}
+
+// GIF searcher
+.gif-searcher {
+  @extend %editor__item;
+
+  > img {
+    width: 100%;
+  }
+}
+%gif-searcher__pane {
+  background: #ccc;
+  padding: 1em;
+  height: 300px;
+}
+.gif-searcher__search {
+  @extend %gif-searcher__pane;
+}
+.gif-searcher__results {
+  @extend %gif-searcher__pane;
+
+  overflow-y: scroll;
+
+  ul {
+    @include block-grid(3);
+  }
+}
+.gif-searcher__show {
+  @extend %gif-searcher__pane;
+  padding: 0;
+}
+
+// Placeholder for dragging
+.editor__placeholder {
+  @extend %editor__item;
+  background: #f4ebd8;
+  border: 2px dashed #b5b582;
+  height: 100px;
+  margin: {
+    left: 50px;
+    right: 50px;
+  }
+}
+// Drag handle
+.editor__handle {
+  @media #{$medium-up} {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 25px;
+    height: 25px;
+    background: #ccc;
+    cursor: ns-resize;
+  }
+}
+// Edit/delete icons
+.editor__icon {
+  width: 25px;
+  height: 25px;
+
+  @media #{$medium-up} {
+    position: absolute;
+    right: 0;
+  }
+
+  &.edit {
+    top: 45%;
+  }
+  &.delete {
+    top: 55%;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+// Add controls below items
+.editor__controls {
+  margin: {
+    top: 1em;
+    bottom: 1em;
+  }
+  text-align: center;
+}
+
+// Fixed toolbar with settings/publish
+.editor__toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(#ccc, 0.75);
+  padding: 1em;
+
+  .button {
+    margin: 0;
+  }
+
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+}

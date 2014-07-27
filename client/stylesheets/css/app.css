@@ -5604,3 +5604,105 @@ th.hide-for-touch {
 
 .touch th.show-for-touch {
   display: table-cell !important; }
+
+.editor {
+  padding-top: 3em;
+  padding-bottom: 10em; }
+
+.content-item {
+  position: relative;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-left: 50px;
+  padding-right: 50px; }
+  .content-item > textarea {
+    width: 100%;
+    height: 1em;
+    margin: 0; }
+
+.gif-searcher > img {
+  width: 100%; }
+
+.gif-searcher__search, .gif-searcher__results, .gif-searcher__show {
+  background: #ccc;
+  padding: 1em;
+  height: 300px; }
+
+.gif-searcher__results {
+  overflow-y: scroll; }
+  .gif-searcher__results ul {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625rem;
+    *zoom: 1; }
+    .gif-searcher__results ul:before, .gif-searcher__results ul:after {
+      content: " ";
+      display: table; }
+    .gif-searcher__results ul:after {
+      clear: both; }
+    .gif-searcher__results ul > li {
+      display: block;
+      height: auto;
+      float: left;
+      padding: 0 0.625rem 1.25rem; }
+    .gif-searcher__results ul > li {
+      width: 33.33333%;
+      padding: 0 0.625rem 1.25rem;
+      list-style: none; }
+      .gif-searcher__results ul > li:nth-of-type(n) {
+        clear: none; }
+      .gif-searcher__results ul > li:nth-of-type(3n+1) {
+        clear: both; }
+
+.gif-searcher__show {
+  padding: 0; }
+
+.editor__placeholder {
+  background: #f4ebd8;
+  border: 2px dashed #b5b582;
+  height: 100px;
+  margin-left: 50px;
+  margin-right: 50px; }
+
+@media only screen and (min-width: 40.063em) {
+  .editor__handle {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 25px;
+    height: 25px;
+    background: #ccc;
+    cursor: ns-resize; } }
+
+.editor__icon {
+  width: 25px;
+  height: 25px; }
+  @media only screen and (min-width: 40.063em) {
+    .editor__icon {
+      position: absolute;
+      right: 0; } }
+  .editor__icon.edit {
+    top: 45%; }
+  .editor__icon.delete {
+    top: 55%; }
+  .editor__icon img {
+    width: 100%; }
+
+.editor__controls {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center; }
+
+.editor__toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(204, 204, 204, 0.75);
+  padding: 1em; }
+  .editor__toolbar .button {
+    margin: 0; }
+  .editor__toolbar .left {
+    float: left; }
+  .editor__toolbar .right {
+    float: right; }
