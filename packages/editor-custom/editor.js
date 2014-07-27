@@ -60,7 +60,7 @@ Editor.prototype = {
     })
   },
   addItem: function(data) {
-    var _this = this
+    var _this = this;
     var $contentItem = $(this.contentItem(data || {}));
     $contentItem
       .appendTo(this.$itemsContainer)
@@ -68,12 +68,12 @@ Editor.prototype = {
       .slideDown(250);
     var gif_searcher = new GIFSearcher($contentItem.find('.gif-searcher'), this);
 
-    this.$container.find('.content-item__body').on('keypress', function(event) {
+    $contentItem.find('.content-item__body').on('keypress', function(event) {
       if (event.which == '.'.charCodeAt(0) || event.which == '?'.charCodeAt(0) || event.which == "!".charCodeAt(0)) {
         var content = $(this).val();
         var request = $.getJSON('http://guarded-caverns-4613.herokuapp.com/ner', {text: content});
         request.done(function(data) {
-          var ul = _this.$container.find('.gif-searcher__suggest > ul');
+          var ul = $contentItem.find('.gif-searcher__suggest > ul');
           ul.empty();
           $.each(data.best_guess, function(index, item) {
                   var list_item = $('<li>'+item+'</li>')
