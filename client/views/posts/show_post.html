@@ -18,7 +18,7 @@
       {{#unless anonymous}}
         <header class="row">
           <div class="small-12 columns title-background text-center">
-            <!-- <p class="article__author">by {{author}}</p> -->
+            <p class="article__author">by {{author}}</p>
           </div>
         </header>
       {{/unless}}
@@ -29,7 +29,6 @@
           {{#each content}}
             {{> postPart}}
           {{/each}}
-          <hr>
         </div>
       </div>
     </article>

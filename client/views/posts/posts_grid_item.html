@@ -1,0 +1,10 @@
+<template name="postsGridItem">
+  <li><a href="{{pathFor 'showPost'}}">
+    {{#if headerImage}}
+      <img src="{{headerImage}}">
+    {{else}}
+      <img src="http://placehold.it/400x300">
+    {{/if}}
+    <h3>{{title}}</h3>
+  </a></li>
+</template>
