@@ -1,4 +1,7 @@
 Template.showUser.helpers({
+  isMe: function(){
+    return Meteor.userId() && Meteor.userId() === this._id;
+  },
   user: function() {
     return Meteor.users.findOne(Session.get('profileUser'),
       {fields:{
@@ -16,9 +19,16 @@ Template.showUser.helpers({
     return  count + (count === 1 ? ' post' : ' posts');
   },
   profileImage: function() {
-    console.log('HELPER:',this);
     var usr = Meteor.users.findOne(this._id);
     if (usr)
       return this.services.twitter.profile_image_url.replace('_normal','');
+  }
+});
+
+Template.showUser.events({
+  'click .sign-out': function() {
+    Meteor.logout(function(){
+      Router.go('home');
+    });
   }
 })

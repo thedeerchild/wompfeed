@@ -6,7 +6,11 @@
     <!-- Content -->
     <img src="images/logo.svg" alt="" class="index-hero__logo">
     <p class="index-hero__tagline">Somewhere between Medium and BuzzFeed.</p>
-    <a href="#" class="large button">Sign in With Twitter</a>
+    {{#if currentUser}}
+      <a href="{{pathFor 'newPost'}}" class="large button">Create a New Post</a>
+    {{else}}
+      <a class="large button sign-in">Sign in With Twitter</a>
+    {{/if}}
   </header>
   <div class="row">
     <div class="small-12 columns">

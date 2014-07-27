@@ -6,7 +6,7 @@
         {{#if currentUser}}
           <li><a href="{{pathFor 'me'}}">{{currentUser.profile.name}}</a></li>
         {{else}}
-          <li><a href="{{pathFor 'logIn'}}">Log In</a></li>
+          <li><a href="#" class="sign-in">Log In</a></li>
         {{/if}}
         <li><a href="{{pathFor 'newPost'}}">Create Post</a></li>
       </ul>
