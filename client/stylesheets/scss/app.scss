@@ -1,3 +1,4 @@
+@import "client/stylesheets/scss/settings";
 @import "packages/foundation5-sass/foundation";
 
 @mixin center-block {
@@ -6,5 +7,11 @@
   margin-right: auto;
 }
 
-@import "client/stylesheets/scss/pages/article";
-@import "client/stylesheets/scss/pages/editor";
+@import 
+  "client/stylesheets/scss/components/article",
+  "client/stylesheets/scss/components/congrats",
+  "client/stylesheets/scss/components/editor",
+  "client/stylesheets/scss/components/header",
+  "client/stylesheets/scss/components/post-grid",
+  "client/stylesheets/scss/components/profile",
+  "client/stylesheets/scss/components/welcome";

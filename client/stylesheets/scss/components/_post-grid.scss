@@ -1,0 +1,21 @@
+.post-grid {
+  @include block-grid(1);
+
+  @media #{$medium-up} {
+    @include block-grid(2, $base-style: false);
+  }
+
+  a {
+    display: block;
+    &:hover {
+      h3 {
+        color: $primary-color;
+      }
+    }
+  }
+  img {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+
+}

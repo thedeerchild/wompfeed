@@ -1,0 +1,38 @@
+.welcome {
+  text-align: center;
+
+  p {
+    font-size: 1.25em;
+  }
+}
+
+.welcome__badge {
+  margin: {
+    top: 0.5em;
+    bottom: 0.5em;
+  }
+  display: inline-block;
+  position: relative;
+  color: black;
+  font-size: 2.75em;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 1000px;
+  background: $primary-color;
+  width: 2.25em;
+  height: 2.25em;
+  line-height: 2.25em;
+  color: white;
+  white-space: nowrap;
+  font-weight: normal;
+
+  span {
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
+    position: absolute;
+    left: -0.3em;
+    font-weight: 900;
+    color: black;
+    font-size: 1.75em;
+    line-height: 2.25 / 1.75em;
+  }
+}

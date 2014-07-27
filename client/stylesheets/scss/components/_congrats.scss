@@ -1,0 +1,51 @@
+@-webkit-keyframes party-spin {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(20deg) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translateY(0px);
+  }
+}
+
+.congrats {
+  background: darken($primary-color, 30%);
+  padding: 1em;
+  overflow: hidden;
+  color: white;
+
+  .header + & {
+    margin-top: -3em;
+  }
+  .row {
+    position: relative;
+  }
+  .columns {
+    position: static;
+  }
+}
+
+.congrats__rafi {
+  position: absolute;
+  left: $column-gutter / 2;
+  bottom: -30px;
+  width: 25%;
+  -webkit-animation: party-spin 1.25s 0.5s ease-out backwards;
+}
+.congrats__title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0em;
+}
+input.congrats__url {
+  max-width: 300px;
+  outline: 0;
+  border: 0;
+  border-radius: 4px;
+  background: rgba(#fff, 0.75);
+
+  &:focus {
+    background: rgba(#fff, 0.85);
+  }
+}

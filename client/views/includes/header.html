@@ -1,4 +1,10 @@
 <template name="header">
-  <a href="{{pathFor 'home'}}">Wompfeed</a>
-  <span style="float:right;">{{> loginButtons}}</span>
+  <header class="header">
+      <a href="{{pathFor 'home'}}"><img src="/images/logo.svg" class="header__logo"></a>
+
+      <ul class="header__nav">
+        <li><a href="#">Log In</a></li>
+        <li><a href="#">Create Post</a></li>
+      </ul>
+    </header>
 </template>
