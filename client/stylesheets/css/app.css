@@ -5605,6 +5605,75 @@ th.hide-for-touch {
 .touch th.show-for-touch {
   display: table-cell !important; }
 
+.header__login {
+  float: right; }
+
+.article img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.article__title {
+  font-family: "motor", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  line-height: 1.1em; }
+  @media only screen {
+    .article__title {
+      font-size: 1.25rem; } }
+  @media only screen and (min-width: 64.063em) {
+    .article__title {
+      font-size: 3.75rem; } }
+
+.article__author {
+  font-family: "europa", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.25rem;
+  color: #424242;
+  padding-top: 2em;
+  padding-bottom: 1.1em; }
+
+.article__body {
+  font-family: "europa", Helvetica, Arial, sans-serif;
+  font-size: 1.875rem;
+  font-weight: 100;
+  color: #424242; }
+
+.article__body p {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-family: "europa", Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 100;
+  color: #424242; }
+
+.hero {
+  position: relative;
+  width: 100%;
+  padding: 2em 0;
+  overflow: hidden;
+  /*height:85vh;*/
+  height: 520px; }
+
+.hero__background {
+  position: absolute;
+  top: -260px;
+  left: 0;
+  width: 500%;
+  -webkit-filter: blur(20px);
+  -webkit-transform: translate3d(0, 0, 0); }
+
+.hero__title {
+  font-family: "motor", Helvetica, Arial, sans-serif;
+  position: relative;
+  text-align: center;
+  font-size: 4.5em;
+  color: white;
+  text-shadow: 1px 1px 1px #838383;
+  padding-top: 1.7em;
+  padding-bottom: 3em; }
+
 .editor {
   padding-top: 3em;
   padding-bottom: 10em; }

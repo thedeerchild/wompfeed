@@ -1,11 +1,30 @@
 <template name="showPost">
-  <div class="row">
-    <div class="small-12 columns">
-      <h1>{{title}}</h1>
-      <h3>by {{author}}</h3>
-      <div class="content">
-        {{content}}
+  <div class="hero">
+      <img class="hero__background" src="//localhost/wompfeed_static/images/heavybreathingcat.gif">
+      <div class="row">
+       <div class="small-12 columns">
+      <h1 class="hero__title">{{title}}</h1>
+      </div>
       </div>
     </div>
-  </div>
+    <article class="article">
+      
+      {{#unless anonymous}}
+        <header class="row">
+          <div class="small-12 columns title-background text-center">
+            <!-- <p class="article__author">by {{author}}</p> -->
+          </div>
+        </header>
+      {{/unless}}
+
+      <div class="row article__body">
+
+        <div class="small-12 medium-10 large-8 large-centered medium-centered columns">
+          {{#each content}}
+            {{> postPart}}
+          {{/each}}
+          <hr>
+        </div>
+      </div>
+    </article>
 </template>
