@@ -5807,6 +5807,11 @@ input.congrats__url {
   input.congrats__url:focus {
     background: rgba(255, 255, 255, 0.85); }
 
+.congrats__profile-link {
+  color: #ffffff; }
+  .congrats__profile-link:hover {
+    color: rgba(255, 255, 255, 0.7); }
+
 .editor {
   padding-top: 3em;
   padding-bottom: 10em; }

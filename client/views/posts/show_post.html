@@ -1,19 +1,17 @@
 <template name="showPost">
-  {{#if true}}
-    <div class="congrats">
-      <div class="row">
-        <div class="hide-for-small medium-4 columns">
-          <img src="/images/white-rafi.svg" class="congrats__rafi">
-        </div>
-        <div class="small-12 medium-8 columns">
-          <p class="congrats__title">Nice work!</p>
-          <p>Your post is ready to be seen by the hungry, frothing masses. You can use this URL to send it to your friends:</p>
-          <input class="congrats__url" type="text" value="{{shareUrl}}">
-          <p>You also earned <strong>100 Cool Points</strong> for publishing this post.</p>
-        </div>
+  <div class="congrats">
+    <div class="row">
+      <div class="hide-for-small medium-4 columns">
+        <img src="/images/white-rafi.svg" class="congrats__rafi">
+      </div>
+      <div class="small-12 medium-8 columns">
+        <p class="congrats__title">Nice work!</p>
+        <p>Your post is ready to be seen by the hungry, frothing masses. You can use this URL to send it to your friends:</p>
+        <input class="congrats__url" type="text" value="{{shareUrl}}">
+        <p>You also earned <strong><a href="{{pathFor 'me'}}" class="congrats__profile-link">50 Cool Points</a></strong> for publishing this post.</p>
       </div>
     </div>
-  {{/if}}
+  </div>
 
   {{#if headerImage}}
     <div class="hero">

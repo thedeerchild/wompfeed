@@ -19,6 +19,8 @@ Meteor.methods({
       submitted: new Date().getTime()
     });
 
+    Meteor.users.update(user._id, {$inc:{points:50}})
+
     var postId = Posts.insert(post);
 
     return postId;
