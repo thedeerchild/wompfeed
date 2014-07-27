@@ -7,7 +7,18 @@
   margin-right: auto;
 }
 
+body {
+  background: #fff url('../images/PartyPartyParty.png') left bottom fixed no-repeat;
+  background-size: auto 100%;
+  font-family: "europa", Helvetica, sans-serif;
+}
+
+.button {
+  border-radius: 8px;
+}
+
 @import 
+  "client/stylesheets/scss/components/index",
   "client/stylesheets/scss/components/article",
   "client/stylesheets/scss/components/congrats",
   "client/stylesheets/scss/components/editor",
