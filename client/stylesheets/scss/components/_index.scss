@@ -24,10 +24,10 @@
   }
 
   .button {
-    background: darken($primary-color, 20%);
+    background: darken($secondary-color,5%);
 
     &:hover {
-      background: darken($primary-color, 25%);
+      background: darken($secondary-color, 20%);
     }
   }
 
