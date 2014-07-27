@@ -3,7 +3,8 @@ Template.newPost.events({
     e.preventDefault();
 
     var post = {
-      title: $('[name=title]').val(),
+      title: $('[name=title]').text(),
+      introText: $('[name=introText]').val(),
       content: window.editor.save(),
       anonymous: $('[name=anonymous]').is(':checked')    
     }

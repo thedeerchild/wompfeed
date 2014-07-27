@@ -1,12 +1,7 @@
 <template name="home">
   <div class="row">
     <div class="small-12 columns">
-      <h1>Home</h1>
-      <a href="{{pathFor 'newPost'}}" class="button">New Post</a>
       {{> postsList}}
-      {{#with currentUser}}
-        <a href="{{pathFor 'me'}}">My Profile</a>
-      {{/with}}
     </div>
   </div>
 </template>

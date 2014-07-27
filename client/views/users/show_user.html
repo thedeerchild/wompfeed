@@ -1,8 +1,39 @@
 <template name="showUser">
-  <div class="row">
+  <section class="row profile">
     <div class="small-12 columns">
-      <h1>{{profile.name}}</h1>
-      {{> postsList}}
+      <section class="row profile__header">
+        <div class="medium-4 columns">
+          <div class="profile__header__avatar">
+            <img src="{{profileImage}}">
+            <span>100</span>
+          </div>
+        </div>
+        <div class="medium-8 columns">
+          <h1 class="profile__header__name">{{profile.name}}</h1>
+          <p class="profile__header__alias"><a href="http://twitter.com/{{services.twitter.screenName}}" target="_blank">@{{services.twitter.screenName}}</a></p>
+        </div>
+      </section>
+      <section class="profile__posts">
+        <h2>4 posts</h2>
+        <ul class="post-grid">
+          <li><a href="#">
+            <img src="http://placehold.it/400x300">
+            <h3>10 Things You Didn't Know You Could Eat</h3>
+          </a></li>
+          <li><a href="#">
+            <img src="http://placehold.it/400x300">
+            <h3>10 Things You Didn't Know You Could Eat</h3>
+          </a></li>
+          <li><a href="#">
+            <img src="http://placehold.it/400x300">
+            <h3>10 Things You Didn't Know You Could Eat</h3>
+          </a></li>
+          <li><a href="#">
+            <img src="http://placehold.it/400x300">
+            <h3>10 Things You Didn't Know You Could Eat</h3>
+          </a></li>
+        </ul>
+      </section>
     </div>
-  </div>
+  </section>
 </template>

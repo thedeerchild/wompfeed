@@ -3,8 +3,12 @@
       <a href="{{pathFor 'home'}}"><img src="/images/logo.svg" class="header__logo"></a>
 
       <ul class="header__nav">
-        <li><a href="#">Log In</a></li>
-        <li><a href="#">Create Post</a></li>
+        {{#if currentUser}}
+          <li><a href="{{pathFor 'me'}}">{{currentUser.profile.name}}</a></li>
+        {{else}}
+          <li><a href="{{pathFor 'logIn'}}">Log In</a></li>
+        {{/if}}
+        <li><a href="{{pathFor 'newPost'}}">Create Post</a></li>
       </ul>
     </header>
 </template>
