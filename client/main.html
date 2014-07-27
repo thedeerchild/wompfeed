@@ -1,12 +1,31 @@
 <template name="home">
+  <header class="index-hero">
+    <!-- Backgrounds -->
+    <img class="index-hero__bgimage" src="http://media.giphy.com/media/10jKaSh53aLDfW/giphy.gif">
+    <span class="index-hero__bgcolor"></span>
+    <!-- Content -->
+    <img src="images/logo.svg" alt="" class="index-hero__logo">
+    <p class="index-hero__tagline">Somewhere between Medium and BuzzFeed.</p>
+    <a href="#" class="large button">Sign in With Twitter</a>
+  </header>
   <div class="row">
     <div class="small-12 columns">
-      <h1>Home</h1>
-      <a href="{{pathFor 'newPost'}}" class="button">New Post</a>
-      {{> postsList}}
+      <section class="index-intro">
+        <p><small>What is Wompfeed, exactly?</small></p>
+        <h2><a href="#">10 Things You Need to Know About WompFeed Right Now</a></h2>
+        <img src="http://placehold.it/16x9" alt="">
+      </section>
+
       {{#with currentUser}}
         <a href="{{pathFor 'me'}}">My Profile</a>
       {{/with}}
+      <a href="{{pathFor 'newPost'}}" class="button">New Post</a>
+
+      <section>
+        <h2>What's Hot</h2>
+
+        {{> postsList}}
+      </section>
     </div>
   </div>
 </template>

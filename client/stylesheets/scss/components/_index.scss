@@ -30,6 +30,10 @@
       background: darken($primary-color, 25%);
     }
   }
+
+  & + .header {
+    margin-top: -3em;
+  }
 }
 
 .index-hero__bgimage {
