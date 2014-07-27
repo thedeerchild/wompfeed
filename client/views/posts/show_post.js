@@ -9,3 +9,13 @@ Template.showPost.helpers({
     return ownsDoc(Meteor.userId(), this);
   }
 });
+
+Template.showPost.rendered = function() {
+  $('.congrats').hide()
+  if (!!Session.get('postFirstView')) {
+    Meteor.setTimeout(function(){
+      $('.congrats').fadeIn('slow');
+    }, 500);
+
+  }
+}

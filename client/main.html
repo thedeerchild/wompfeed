@@ -1,30 +1,32 @@
 <template name="home">
-  <header class="index-hero">
-    <!-- Backgrounds -->
-    <img class="index-hero__bgimage" src="http://media.giphy.com/media/10jKaSh53aLDfW/giphy.gif">
-    <span class="index-hero__bgcolor"></span>
-    <!-- Content -->
-    <img src="images/logo.svg" alt="" class="index-hero__logo">
-    <p class="index-hero__tagline">Somewhere between Medium and BuzzFeed.</p>
-    {{#if currentUser}}
-      <a href="{{pathFor 'newPost'}}" class="large button">Create a New Post</a>
-    {{else}}
-      <a class="large button sign-in">Sign in With Twitter</a>
-    {{/if}}
-  </header>
-  <div class="row">
-    <div class="small-12 columns">
-      <section class="index-intro">
-        <p><small>What is Wompfeed, exactly?</small></p>
-        <h2><a href="#">10 Things You Need to Know About WompFeed Right Now</a></h2>
-        <img src="http://placehold.it/16x9" alt="">
-      </section>
+  <div class="rafi-box">
+    <header class="index-hero">
+      <!-- Backgrounds -->
+      <img class="index-hero__bgimage" src="http://media.giphy.com/media/10jKaSh53aLDfW/giphy.gif">
+      <span class="index-hero__bgcolor"></span>
+      <!-- Content -->
+      <img src="images/logo.svg" alt="" class="index-hero__logo">
+      <p class="index-hero__tagline">Somewhere between Medium and BuzzFeed.</p>
+      {{#if currentUser}}
+        <a href="{{pathFor 'newPost'}}" class="large button">Create a New Post</a>
+      {{else}}
+        <a class="large button sign-in">Sign in With Twitter</a>
+      {{/if}}
+    </header>
+    <div class="row">
+      <div class="small-12 columns">
+        <section class="index-intro">
+          <p><small>What is Wompfeed, exactly?</small></p>
+          <h2><a href="#">10 Things You Need to Know About WompFeed Right Now</a></h2>
+          <img src="http://placehold.it/16x9" alt="">
+        </section>
 
-      <section>
-        <h2>What's Hot</h2>
+        <section>
+          <h2>What's Hot</h2>
 
-        {{> postsGrid}}
-      </section>
+          {{> postsGrid}}
+        </section>
+      </div>
     </div>
   </div>
 </template>

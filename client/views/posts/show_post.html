@@ -1,32 +1,30 @@
 <template name="showPost">
-  {{#if true}}
-    <div class="congrats">
-      <div class="row">
-        <div class="hide-for-small medium-4 columns">
-          <img src="/images/white-rafi.svg" class="congrats__rafi">
-        </div>
-        <div class="small-12 medium-8 columns">
-          <p class="congrats__title">Nice work!</p>
-          <p>Your post is ready to be seen by the hungry, frothing masses. You can use this URL to send it to your friends:</p>
-          <input class="congrats__url" type="text" value="{{shareUrl}}">
-          <p>You also earned <strong>100 Cool Points</strong> for publishing this post.</p>
-        </div>
+  <div class="congrats">
+    <div class="row">
+      <div class="hide-for-small medium-4 columns">
+        <img src="/images/white-rafi.svg" class="congrats__rafi">
+      </div>
+      <div class="small-12 medium-8 columns">
+        <p class="congrats__title">Nice work!</p>
+        <p>Your post is ready to be seen by the hungry, frothing masses. You can use this URL to send it to your friends:</p>
+        <input class="congrats__url" type="text" value="{{shareUrl}}">
+        <p>You also earned <strong><a href="{{pathFor 'me'}}" class="congrats__profile-link">50 Cool Points</a></strong> for publishing this post.</p>
       </div>
     </div>
-  {{/if}}
+  </div>
 
   {{#if headerImage}}
     <div class="hero">
-      <img class="hero__background" src="//localhost/wompfeed_static/images/heavybreathingcat.gif">
+      <img class="article-hero__background" src="{{headerImage}}">
       <div class="row">
        <div class="small-12 columns">
-          <h1 class="hero__title">{{title}}</h1>
+          <h1 class="article-hero__title">{{title}}</h1>
         </div>
       </div>
     </div>
   {{else}}
     <div class="hero-no-background">
-      <h1 class="hero__title-no-background">{{title}}</h1>
+      <h1 class="article-hero__title-no-background">{{title}}</h1>
     </div>
   {{/if}}
   <article class="article">
@@ -34,7 +32,7 @@
     {{#unless anonymous}}
       <header class="row">
         <div class="small-12 columns title-background text-center">
-          <p class="article__author">by {{author}}</p>
+          <p class="article__author">by <a href="{{authorUrl}}">{{author}}</a></p>
         </div>
       </header>
     {{/unless}}
@@ -42,6 +40,7 @@
     <div class="row article__body">
 
       <div class="small-12 medium-10 large-8 large-centered medium-centered columns">
+        <p>{{introText}}</p>
         {{#each content}}
           {{> postPart}}
         {{/each}}
