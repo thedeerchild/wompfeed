@@ -17,4 +17,12 @@
     display: block;
     margin-bottom: 0.5em;
   }
+
+  .grid-img {
+    width:100%;
+    padding-top:75%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
