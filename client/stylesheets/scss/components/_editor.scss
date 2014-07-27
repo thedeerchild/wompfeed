@@ -26,6 +26,11 @@
     position: relative;
     z-index: 2;
     color: white;
+    cursor: text;
+
+    &:focus {
+      outline: 0;
+    }
   }
 .editor__deck {
   font-size: 1.5rem;

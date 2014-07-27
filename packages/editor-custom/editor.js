@@ -30,6 +30,7 @@ Editor.prototype = {
         // add gif searcher
         var $contentItem = $(this.contentItem(data || {}));
         $contentItem.find('.gif-searcher').clone().appendTo(this.$hero_gif_search);
+        this.$hero_gif_search.find('.gif-searcher__search > input').attr('placeholder', "Add a header GIF");
         var gif_searcher = new GIFSearcher(this.$hero_gif_search.find('.gif-searcher'), this);
         var _this = this;
         gif_searcher.showImage = function(src) {
@@ -54,7 +55,7 @@ Editor.prototype = {
     // });
 
     // Block carriage returns on title editor, blur the field instead
-    this.$title.on('keypress', function(event) {
+    this.$container.on('keypress', '[data-editor-title], .content-item__title', function(event) {
       if (event.which === 13) {
         $(this).blur();
       }
@@ -79,6 +80,14 @@ Editor.prototype = {
       .hide(0)
       .slideDown(250);
     var gif_searcher = new GIFSearcher($contentItem.find('.gif-searcher'), this);
+
+    if (data) {
+        $contentItem.find('.content-item__title').val(data.title)
+        $contentItem.find('.content-item__body').val(data.body)
+            if (data.image)
+                gif_searcher.showImage(data.image);
+
+    }
 
     this.$itemsContainer.sortable({
       handle: '[data-editor-handle]',
@@ -120,6 +129,8 @@ Editor.prototype = {
         'body': $(this).find('.content-item__body').val()
       });
     });
+
+    console.log(json);
 
     return json;
   },
@@ -206,6 +217,7 @@ GIFSearcher.prototype = {
         var $item = $('<li><img src="'+image.images.original.url+'"></li>');
         $container.append($item);
       });
+      // $container.masonry({itemSelector: 'li'});
     }
   },
   showImage: function(src) {
@@ -227,7 +239,7 @@ GIFSearcher.prototype = {
             query = encodeURI(query.replace(" ","+"));
             
             var queryURL = 'http://api.giphy.com/v1/gifs/search'
-            , params   = {q: query, limit: 9, api_key: 'dc6zaTOxFJmzC'}
+            , params   = {q: query, limit: 24, api_key: 'dc6zaTOxFJmzC'}
             
             var search = $.getJSON(queryURL, params);
             return search;

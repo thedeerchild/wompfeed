@@ -5698,7 +5698,8 @@ body {
 .article img {
   display: block;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  margin-bottom: 1em; }
 
 .article__title {
   font-weight: 900;
@@ -5840,7 +5841,14 @@ input.congrats__url {
   text-align: center;
   position: relative;
   z-index: 2;
+<<<<<<< HEAD
   color: white; }
+=======
+  color: white;
+  cursor: text; }
+  .editor-hero__title:focus {
+    outline: 0; }
+>>>>>>> f6334cb4b2ec32ded1dd832d2e41a661ea2e2734
 
 .editor__deck {
   font-size: 1.5rem;
@@ -6031,14 +6039,30 @@ input.congrats__url {
 
 .gif-searcher__settings {
   position: absolute;
+<<<<<<< HEAD
   bottom: 0;
+=======
+  top: 0.5em;
+>>>>>>> f6334cb4b2ec32ded1dd832d2e41a661ea2e2734
   left: 0;
   text-align: center;
   width: 100%;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
+<<<<<<< HEAD
   text-shadow: 0 2px 0 #000; }
+=======
+  text-shadow: 0 2px 0 #000;
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -ms-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear; }
+  .gif-searcher__show:hover .gif-searcher__settings {
+    opacity: 1;
+    color: #ccc; }
+>>>>>>> f6334cb4b2ec32ded1dd832d2e41a661ea2e2734
   .gif-searcher__settings a {
     color: white;
     top: 0px; }
@@ -6047,6 +6071,26 @@ input.congrats__url {
       position: relative;
       top: -2px; }
 
+<<<<<<< HEAD
+=======
+.gif-searcher__suggest ul {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 0;
+  margin-top: 1em; }
+.gif-searcher__suggest li {
+  display: inline-block;
+  background: #ff7150;
+  padding: 0.25em 0.75em;
+  margin-right: 1em;
+  font-size: 0.9em;
+  border-radius: 8px;
+  color: white; }
+  .gif-searcher__suggest li:hover {
+    background: #ff3303;
+    cursor: pointer; }
+
+>>>>>>> f6334cb4b2ec32ded1dd832d2e41a661ea2e2734
 .header {
   *zoom: 1;
   background: #ff7150;
@@ -6115,6 +6159,12 @@ input.congrats__url {
   .post-grid img {
     display: block;
     margin-bottom: 0.5em; }
+  .post-grid .grid-img {
+    width: 100%;
+    padding-top: 75%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; }
 
 @media only screen and (max-width: 40em) {
   .profile__header {
@@ -6127,9 +6177,11 @@ input.congrats__url {
 
 .profile__header__avatar {
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  max-width: 200px; }
   .profile__header__avatar img {
-    border-radius: 1000px; }
+    border-radius: 1000px;
+    width: 100%; }
   .profile__header__avatar span {
     position: absolute;
     bottom: -0.3em;
