@@ -4,6 +4,7 @@ Template.newPost.events({
 
     var post = {
       title: $('[name=title]').text(),
+      headerImage: $('[hero-background]').attr('src'),
       introText: $('[name=introText]').val(),
       content: window.editor.save(),
       anonymous: $('[name=anonymous]').is(':checked')    
