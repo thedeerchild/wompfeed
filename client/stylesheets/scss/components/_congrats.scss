@@ -49,3 +49,9 @@ input.congrats__url {
     background: rgba(#fff, 0.85);
   }
 }
+.congrats__profile-link {
+  color: #ffffff;
+  &:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}

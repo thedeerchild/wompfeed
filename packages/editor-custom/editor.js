@@ -172,6 +172,11 @@ GIFSearcher.prototype = {
       var src = $(this).children('img').attr('src');
       _this.showImage(src);
     });
+
+    this.views.image.find('.delete').click(function() {
+      _this.views.image.children('img').attr('src', '');
+      _this.showSearch();
+    });
   },
 
   showSearch: function() {
