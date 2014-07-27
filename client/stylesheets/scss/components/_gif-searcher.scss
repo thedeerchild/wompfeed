@@ -80,3 +80,26 @@
     }
   }
 }
+.gif-searcher__suggest {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 0;
+    margin-top: 1em;
+  }
+
+  li {
+    display: inline-block;
+    background: $primary-color;
+    padding: 0.25em 0.75em;
+    margin-right: 1em;
+    font-size: 0.9em;
+    border-radius: 8px;
+    color: white;
+
+    &:hover {
+      background: darken($primary-color, 15%);
+      cursor: pointer;
+    }
+  }
+}
