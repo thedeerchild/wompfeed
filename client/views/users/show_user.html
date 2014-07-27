@@ -11,6 +11,7 @@
         <div class="medium-8 columns">
           <h1 class="profile__header__name">{{profile.name}}</h1>
           <p class="profile__header__alias"><a href="http://twitter.com/{{services.twitter.screenName}}" target="_blank">@{{services.twitter.screenName}}</a></p>
+          {{#if isMe}}<p><a href="#" class="sign-out">Sign Out</a></p>{{/if}}
         </div>
       </section>
       <section class="profile__posts">

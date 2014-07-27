@@ -5632,7 +5632,7 @@ body {
     background: #e92c00; }
     .index-hero .button:hover {
       background: #d02700; }
-  .index-hero + .header {
+  .header + .index-hero {
     margin-top: -3em; }
 
 .index-hero__bgimage {

@@ -6,7 +6,11 @@
     <!-- Content -->
     <img src="images/logo.svg" alt="" class="index-hero__logo">
     <p class="index-hero__tagline">Somewhere between Medium and BuzzFeed.</p>
-    <a href="#" class="large button">Sign in With Twitter</a>
+    {{#if currentUser}}
+      <a href="{{pathFor 'newPost'}}" class="large button">Create a New Post</a>
+    {{else}}
+      <a class="large button sign-in">Sign in With Twitter</a>
+    {{/if}}
   </header>
   <div class="row">
     <div class="small-12 columns">
@@ -16,15 +20,10 @@
         <img src="http://placehold.it/16x9" alt="">
       </section>
 
-      {{#with currentUser}}
-        <a href="{{pathFor 'me'}}">My Profile</a>
-      {{/with}}
-      <a href="{{pathFor 'newPost'}}" class="button">New Post</a>
-
       <section>
         <h2>What's Hot</h2>
 
-        {{> postsList}}
+        {{> postsGrid}}
       </section>
     </div>
   </div>
