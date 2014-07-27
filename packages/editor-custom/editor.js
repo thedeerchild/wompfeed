@@ -30,6 +30,7 @@ Editor.prototype = {
         // add gif searcher
         var $contentItem = $(this.contentItem(data || {}));
         $contentItem.find('.gif-searcher').clone().appendTo(this.$hero_gif_search);
+        this.$hero_gif_search.find('.gif-searcher__search > input').attr('placeholder', "Add a header GIF");
         var gif_searcher = new GIFSearcher(this.$hero_gif_search.find('.gif-searcher'), this);
         var _this = this;
         gif_searcher.showImage = function(src) {
