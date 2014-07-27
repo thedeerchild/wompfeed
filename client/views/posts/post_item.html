@@ -1,0 +1,6 @@
+<template name="postItem">
+ <li>
+    <a href="{{pathFor 'showPost'}}">{{title}}</a>
+    {{#unless anonymous}} by <a href="{{authorUrl}}">{{author}}</a>{{/unless}}
+  </li>
+</template>

@@ -3,13 +3,9 @@
     <div class="small-12 columns">
       <h1>Home</h1>
       <a href="{{pathFor 'newPost'}}" class="button">New Post</a>
-      <ul>
-        {{#each posts}}
-          <li><a href="{{pathFor 'showPost'}}">{{title}}</a> by {{author}}</li>
-        {{/each}}
-      </ul>
+      {{> postsList}}
       {{#with currentUser}}
-        <a href="{{pathFor 'showUser'}}">My Profile</a>
+        <a href="{{pathFor 'me'}}">My Profile</a>
       {{/with}}
     </div>
   </div>

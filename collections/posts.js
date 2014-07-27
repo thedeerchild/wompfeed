@@ -15,7 +15,7 @@ Meteor.methods({
 
     var post = _.extend(_.pick(postAttrs, 'title', 'content', 'anonymous'), {
       userId: user._id, 
-      author: postAttrs.anonymous ? 'Anonymous' : user.profile.name, 
+      author: postAttrs.anonymous ? 'Anonymous' : user.profile.name,
       submitted: new Date().getTime()
     });
 
