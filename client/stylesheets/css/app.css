@@ -2636,6 +2636,7 @@ select::-ms-expand {
 
   select:hover {
     background: #f3f3f3; } }
+
 /* Attach elements to the beginning or end of an input */
 .prefix,
 .postfix {
@@ -3154,6 +3155,7 @@ kbd {
 
   to {
     transform: rotate(360deg); } }
+
 /* Orbit Graceful Loading */
 .slideshow-wrapper {
   position: relative; }
@@ -3290,7 +3292,7 @@ kbd {
     left: 10px;
     font-size: 12px;
     color: white;
-    background: transparent;
+    background: rgba(0, 0, 0, 0);
     z-index: 10; }
     .orbit-container .orbit-slide-number span {
       font-weight: 700;
@@ -3723,7 +3725,13 @@ dialog[open] {
     dialog.round, .reveal-modal.round {
       border-radius: 1000px; }
     dialog.collapse, .reveal-modal.collapse {
-      padding: 0; } }
+      padding: 0; }
+  dialog.full, .reveal-modal.full {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    min-height: 100vh;
+    margin-left: 0 !important; } }
   @media only screen and (min-width: 40.063em) and (min-width: 40.063em) {
     dialog.tiny, .reveal-modal.tiny {
       margin-left: -15%;
@@ -3745,13 +3753,6 @@ dialog[open] {
       margin-left: -47.5%;
       width: 95%; } }
 
-@media only screen and (min-width: 40.063em) {
-  dialog.full, .reveal-modal.full {
-    top: 0;
-    left: 0;
-    height: 100vh;
-    min-height: 100vh;
-    margin-left: 0 !important; } }
   @media only screen and (min-width: 40.063em) and (min-width: 40.063em) {
     dialog.full, .reveal-modal.full {
       margin-left: -50vw;
@@ -5099,6 +5100,7 @@ blockquote p {
 
   @page {
     margin: 0.5cm; }
+
   p,
   h2,
   h3 {
@@ -5301,7 +5303,7 @@ ul.off-canvas-list {
   left: 0;
   right: 0;
   z-index: 1002;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
   @media only screen and (min-width: 40.063em) {
     .move-right .exit-off-canvas:hover {
       background: rgba(255, 255, 255, 0.05); } }
@@ -5325,7 +5327,7 @@ ul.off-canvas-list {
   left: 0;
   right: 0;
   z-index: 1002;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
   @media only screen and (min-width: 40.063em) {
     .move-left .exit-off-canvas:hover {
       background: rgba(255, 255, 255, 0.05); } }
@@ -5751,6 +5753,7 @@ body {
   top: -260px;
   left: 0;
   width: 500%;
+  z-index: -1;
   -webkit-filter: blur(20px);
   -webkit-transform: translate3d(0, 0, 0); }
 
@@ -5763,6 +5766,11 @@ body {
   padding-top: 1.7em;
   padding-bottom: 3em; }
 
+.article-hero__title-no-background {
+  position: relative;
+  text-align: center;
+  font-size: 4.5em; }
+
 @-webkit-keyframes party-spin {
   0% {
     opacity: 0;
@@ -5771,6 +5779,7 @@ body {
   100% {
     opacity: 1;
     -webkit-transform: rotate(0deg) translateY(0px); } }
+
 .congrats {
   background: #b62200;
   padding: 1em;

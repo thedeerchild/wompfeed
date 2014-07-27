@@ -15,16 +15,16 @@
 
   {{#if headerImage}}
     <div class="hero">
-      <img class="hero__background" src="{{headerImage}}" hero-background>
+      <img class="article-hero__background" src="{{headerImage}}">
       <div class="row">
        <div class="small-12 columns">
-          <h1 class="hero__title">{{title}}</h1>
+          <h1 class="article-hero__title">{{title}}</h1>
         </div>
       </div>
     </div>
   {{else}}
     <div class="hero-no-background">
-      <h1 class="hero__title-no-background">{{title}}</h1>
+      <h1 class="article-hero__title-no-background">{{title}}</h1>
     </div>
   {{/if}}
   <article class="article">
@@ -32,7 +32,7 @@
     {{#unless anonymous}}
       <header class="row">
         <div class="small-12 columns title-background text-center">
-          <p class="article__author">by {{author}}</p>
+          <p class="article__author">by <a href="{{authorUrl}}">{{author}}</a></p>
         </div>
       </header>
     {{/unless}}
