@@ -5605,8 +5605,95 @@ th.hide-for-touch {
 .touch th.show-for-touch {
   display: table-cell !important; }
 
-.header__login {
-  float: right; }
+body {
+  background: white url("../images/PartyPartyParty.png") left bottom fixed no-repeat;
+  background-size: auto 100%;
+  font-family: "europa", Helvetica, sans-serif; }
+
+.button {
+  border-radius: 8px; }
+
+.index-hero {
+  position: relative;
+  text-align: center;
+  background: #ff7150;
+  color: white;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-bottom: 2em; }
+  @media only screen and (min-width: 40.063em) {
+    .index-hero {
+      padding-top: 4em;
+      padding-bottom: 4em;
+      margin-bottom: 3em; } }
+  @media only screen and (min-width: 64.063em) {
+    .index-hero {
+      padding-top: 6em;
+      padding-bottom: 6em; } }
+  .index-hero .button {
+    background: #e92c00; }
+    .index-hero .button:hover {
+      background: #d02700; }
+  .header + .index-hero {
+    margin-top: -3em; }
+
+.index-hero__bgimage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1; }
+
+.index-hero__bgcolor {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 113, 80, 0.8);
+  z-index: 2;
+  top: 0;
+  left: 0; }
+
+.index-hero__logo {
+  width: 500px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 1em auto;
+  position: relative;
+  z-index: 3; }
+
+.index-hero__tagline {
+  margin-bottom: 1.25em;
+  font-weight: 300;
+  position: relative;
+  z-index: 3; }
+  @media only screen and (min-width: 40.063em) {
+    .index-hero__tagline {
+      font-size: 2em; } }
+
+.index-hero .button {
+  position: relative;
+  z-index: 3; }
+
+.index-intro {
+  margin-top: 2em;
+  margin-bottom: 4em; }
+  .index-intro p {
+    margin-bottom: 0; }
+  .index-intro small {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: #ff7150;
+    font-weight: bold; }
+  .index-intro h2 a {
+    color: black; }
+    .index-intro h2 a:hover {
+      color: #ff7150; }
+  .index-intro img {
+    display: block;
+    margin-top: 0.5em;
+    width: 100%; }
 
 .article img {
   display: block;
@@ -5614,7 +5701,6 @@ th.hide-for-touch {
   margin-right: auto; }
 
 .article__title {
-  font-family: "motor", Helvetica, Arial, sans-serif;
   font-weight: 900;
   line-height: 1.1em; }
   @media only screen {
@@ -5624,46 +5710,45 @@ th.hide-for-touch {
     .article__title {
       font-size: 3.75rem; } }
 
-.article__author {
-  font-family: "europa", Helvetica, Arial, sans-serif;
+.article .article__author {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
   font-size: 1.25rem;
   color: #424242;
   padding-top: 2em;
-  padding-bottom: 1.1em; }
+  padding-bottom: 1.1em;
+  text-align: center;
+  font-weight: bold; }
+
+.article .article__deck {
+  font-size: 1em;
+  color: #666; }
 
 .article__body {
-  font-family: "europa", Helvetica, Arial, sans-serif;
   font-size: 1.875rem;
   font-weight: 100;
   color: #424242; }
+  .article__body p {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 1.25rem;
+    font-weight: 100;
+    color: #424242; }
+  .article__body img {
+    width: 100%; }
 
-.article__body p {
-  padding-top: 1em;
-  padding-bottom: 1em;
-  font-family: "europa", Helvetica, Arial, sans-serif;
-  font-size: 1.25rem;
-  font-weight: 100;
-  color: #424242; }
-
-.article__body img {
-  width: 100%; }
-
-.hero {
+.article-hero {
   position: relative;
   width: 100%;
   padding: 2em 0;
   overflow: hidden;
-  height: 85vh; }
+  height: 520px;
+  margin-bottom: 1em; }
+  .header + .article-hero {
+    margin-top: -3em; }
 
-.hero-no-background {
-  position: relative;
-  width: 100%;
-  padding: 2em 0; }
-
-.hero__background {
+.article-hero__background {
   position: absolute;
   top: -260px;
   left: 0;
@@ -5671,8 +5756,7 @@ th.hide-for-touch {
   -webkit-filter: blur(20px);
   -webkit-transform: translate3d(0, 0, 0); }
 
-.hero__title {
-  font-family: "motor", Helvetica, Arial, sans-serif;
+.article-hero__title {
   position: relative;
   text-align: center;
   font-size: 4.5em;
@@ -5680,12 +5764,6 @@ th.hide-for-touch {
   text-shadow: 1px 1px 1px #838383;
   padding-top: 1.7em;
   padding-bottom: 3em; }
-
-.hero__title-no-background {
-  font-family: "motor", Helvetica, Arial, sans-serif;
-  position: relative;
-  text-align: center;
-  font-size: 4.5em; }
 
 @-webkit-keyframes party-spin {
   0% {

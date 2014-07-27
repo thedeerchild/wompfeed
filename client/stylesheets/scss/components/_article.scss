@@ -1,34 +1,16 @@
-.header {
-
-}
-  .header__logo {
-
-  }
-  .header__login {
-    float:right;
-  }
-
 .article {
   img{
     @include center-block;
   }
 
 }
-.title-background{
-
-}
   .article__title {
-    font-family: "motor", Helvetica, Arial, sans-serif;
     font-weight: 900;
     line-height:1.1em;
     @media #{$small-up}{font-size:rem-calc(20);}
     @media #{$large-up}{font-size:rem-calc(60);}
-
-}
-  ul{
   }
-  .article__author {
-    font-family: "europa", Helvetica, Arial, sans-serif;
+  .article .article__author {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
@@ -36,43 +18,44 @@
     color:#424242;
     padding-top:2em;
     padding-bottom:1.1em;
-
+    text-align: center;
+    font-weight: bold;
+  }
+  .article .article__deck {
+    font-size: 1em;
+    color: #666;
   }
   .article__body {
-    font-family: "europa", Helvetica, Arial, sans-serif;
     font-size: rem-calc(30);
     font-weight: 100;
     color:#424242;
 
-
-  }
-    .article__body p {
-    padding-top:1em;
-    padding-bottom:1em;
-    font-family: "europa", Helvetica, Arial, sans-serif;
-    font-size: rem-calc(20);
-    font-weight: 100;
-    color:#424242;
-
+    p {
+      padding-top:1em;
+      padding-bottom:1em;
+      font-size: rem-calc(20);
+      font-weight: 100;
+      color:#424242;
     }
-    .article__body img {
+    img {
       width: 100%;
     }
+  }
 
-.hero {
+.article-hero {
   position: relative;
   width: 100%;
   padding: 2em 0;
-  overflow: hidden; // Hide overflow to contain the background
-  height:85vh;
-  // height:520px;
+  overflow: hidden;
+  height:520px;
+  margin-bottom: 1em;
+
+  .header + & {
+    margin-top: -3em;
+  }
+
 }
-.hero-no-background {
-  position: relative;
-  width: 100%;
-  padding: 2em 0;
-}
-  .hero__background {
+  .article-hero__background {
     position: absolute;
     top: -260px;
     left: 0;
@@ -81,8 +64,7 @@
     -webkit-filter: blur(20px);
     -webkit-transform: translate3d(0, 0, 0);
   }
-  .hero__title {
-    font-family: "motor", Helvetica, Arial, sans-serif;
+  .article-hero__title {
     position: relative;
     text-align: center;
     font-size: 4.5em;
@@ -90,14 +72,4 @@
     text-shadow: 1px 1px 1px #838383;
     padding-top: 1.7em;
     padding-bottom:3em;
-  }
-  .hero__title-no-background {
-    font-family: "motor", Helvetica, Arial, sans-serif;
-    position: relative;
-    text-align: center;
-    font-size: 4.5em;
-    // color: white;
-    // text-shadow: 1px 1px 1px #838383;
-    // padding-top: 1.7em;
-    // padding-bottom:3em;
   }
