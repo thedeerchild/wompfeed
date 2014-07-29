@@ -11,6 +11,15 @@ Template.showPost.helpers({
   }
 });
 
+Template.showPost.events({
+  'click .delete-post': function(e,t) {
+    if (confirm('Are you sure you want to delete this post?')) {
+      Posts.remove(t.data._id);
+      Router.go('home');
+    }
+  }
+})
+
 Template.showPost.rendered = function() {
   $('.congrats').hide()
   if (!!Session.get('postFirstView')) {
