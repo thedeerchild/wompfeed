@@ -6,7 +6,8 @@ Template.showPost.helpers({
     return Router.routes['showUser'].path({_id: this.userId});
   },
   ownsPost: function() {
-    return ownsDoc(Meteor.userId(), this) || Meteor.user().admin;
+    if (!!Meteor.user())
+      return ownsDoc(Meteor.userId(), this) || (!!Meteor.user().admin && Meteor.user().admin);
   }
 });
 
