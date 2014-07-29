@@ -1,5 +1,11 @@
 Posts = new Meteor.Collection('posts');
 
+Posts.allow({
+  remove: function(userId, doc) {
+    return ownsDoc(userId, doc) || (!!Meteor.user().admin && Meteor.user().admin);
+  }
+});
+
 Meteor.methods({
   createPost: function(postAttrs) {
     var user = Meteor.user();
