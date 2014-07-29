@@ -1,10 +1,10 @@
 <template name="editPostForm">
   <div data-editor>
     <div class="editor-hero">
-      <img class="editor-hero__background" src="http://placehold.it/500x500&text=%20" hero-background>
+      <img class="editor-hero__background" src="{{headerImageUrl}}" hero-background>
       <div class="row">
         <div class="small-12 columns">
-          <h1 class="editor-hero__title" name="title" contenteditable data-editor-title>Click to Add Title</h1>
+          <h1 class="editor-hero__title" name="title" contenteditable data-editor-title>{{titleText}}</h1>
         </div>
       </div>
     </div>
@@ -13,7 +13,7 @@
       <div class="medium-10 large-8 medium-centered columns">
         <div class="editor__gif-searcher" hero-gif-search></div>
         <div class="editor__title">
-          <textarea class="editor__deck" name="introText" placeholder="Add an intro (optional)"></textarea>
+          <textarea class="editor__deck" name="introText" placeholder="Add an intro (optional)">{{introText}}</textarea>
         </div>
         
         <div class="editor__items" data-editor-items></div>

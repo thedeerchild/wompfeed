@@ -1,11 +1,13 @@
 <template name="editPost">
   <form>
-    {{> editPostForm}}
+    {{#with post}}
+      {{> editPostForm}}
+    {{/with}}
     <div class="editor__toolbar">
-      <a href="{{pathFor 'home'}}" class="small secondary button left">Don't Save</a>
-      <a href="#" class="small button right submit-form">Publish</a>
+      <a href="{{pathFor 'home'}}" class="small secondary button left">Cancel</a>
+      <a href="#" class="small button right submit-form">Save</a>
       <label class="editor__toolbar__anon right">
-        <input type="checkbox" name="anonymous" />
+        <input type="checkbox" name="anonymous" checked="{{post.anonymous}}" />
         Anonymous
       </label>
     </div>
