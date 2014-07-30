@@ -130,8 +130,6 @@ Editor.prototype = {
       });
     });
 
-    console.log(json);
-
     return json;
   },
   save: function() {

@@ -1,4 +1,8 @@
 <template name="showPost">
+  <head>
+    <title>{{title}} | WompFeed</title>
+  </head>
+
   <div class="congrats">
     <div class="row">
       <div class="hide-for-small medium-4 columns">
@@ -33,6 +37,9 @@
       <header class="row">
         <div class="small-12 columns title-background text-center">
           <p class="article__author">by <a href="{{authorUrl}}">{{author}}</a></p>
+          {{#if ownsPost}}
+            <p><a href="{{pathFor 'editPost'}}">Edit Post</a>&nbsp;&#8226;&nbsp;<a href="#" class="delete-post">Delete Post</a></p>
+          {{/if}}
         </div>
       </header>
     {{/unless}}

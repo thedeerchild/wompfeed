@@ -1,5 +1,11 @@
 Posts = new Meteor.Collection('posts');
 
+Posts.allow({
+  remove: function(userId, doc) {
+    return ownsDoc(userId, doc) || (!!Meteor.user().admin && Meteor.user().admin);
+  }
+});
+
 Meteor.methods({
   createPost: function(postAttrs) {
     var user = Meteor.user();
@@ -19,6 +25,28 @@ Meteor.methods({
     Meteor.users.update(user._id, {$inc:{points:50}})
 
     var postId = Posts.insert(post);
+
+    return postId;
+  },
+  editPost: function(postAttrs) {
+    var user = Meteor.user(),
+        postId = postAttrs._id,
+        post = Posts.findOne(postId);
+    
+    if (!user)
+      throw new Meteor.Error(401, "You need to login to post new stories");
+
+    if (!ownsDoc(user._id, post))
+      throw new Meteor.Error(401, "Um...you don't seem to own this post");
+
+    if (!postAttrs.title)
+      throw new Meteor.Error(422, 'Please fill in a headline');
+
+    var post = _.extend(_.pick(postAttrs, 'title', 'headerImage', 'introText', 'content', 'anonymous'), {
+      updated: new Date().getTime()
+    });
+
+    Posts.update(postId, {$set:post});
 
     return postId;
   }

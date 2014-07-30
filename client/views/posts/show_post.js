@@ -6,9 +6,19 @@ Template.showPost.helpers({
     return Router.routes['showUser'].path({_id: this.userId});
   },
   ownsPost: function() {
-    return ownsDoc(Meteor.userId(), this);
+    if (!!Meteor.user())
+      return ownsDoc(Meteor.userId(), this) || (!!Meteor.user().admin && Meteor.user().admin);
   }
 });
+
+Template.showPost.events({
+  'click .delete-post': function(e,t) {
+    if (confirm('Are you sure you want to delete this post?')) {
+      Posts.remove(t.data._id);
+      Router.go('home');
+    }
+  }
+})
 
 Template.showPost.rendered = function() {
   $('.congrats').hide()
