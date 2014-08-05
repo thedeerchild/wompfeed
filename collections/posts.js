@@ -36,7 +36,7 @@ Meteor.methods({
     if (!user)
       throw new Meteor.Error(401, "You need to login to post new stories");
 
-    if (!ownsDoc(user._id, post))
+    if (!ownsDoc(user._id, post) && !user.admin)
       throw new Meteor.Error(401, "Um...you don't seem to own this post");
 
     if (!postAttrs.title)
