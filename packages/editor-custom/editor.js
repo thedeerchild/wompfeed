@@ -13,7 +13,6 @@ Editor.prototype = {
     this.$hero_gif_search= elem.find('[hero-gif-search]');
     this.$addButton      = elem.find('[data-editor-add]');
 
-    console.log(this.$title);
     this.lastSearch = '';
 
     // Content item template
@@ -24,6 +23,7 @@ Editor.prototype = {
     this.events();
 
     if (typeof data === 'object') {
+      console.log(data);
       this.deserialize(data);
     }
     else {
