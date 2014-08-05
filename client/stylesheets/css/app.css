@@ -5606,11 +5606,16 @@ th.hide-for-touch {
   display: table-cell !important; }
 
 body {
-  font-family: "europa", Helvetica, sans-serif; }
+  font-family: "europa", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+.main-wrapper {
+  clear: both; }
 
 .rafi-box {
   background: white url("../images/PartyPartyParty.png") left bottom fixed no-repeat;
-  background-size: auto 100%; }
+  background-size: auto 100%;
+  clear: both; }
 
 .button {
   border-radius: 8px; }
@@ -5942,44 +5947,24 @@ input.congrats__url {
     margin-right: 0.25em; }
 
 .footer {
-  background: #313131;
-  height: 15em; }
+  background: #333;
+  color: #fff;
+  padding-top: 2em; }
+  .footer p {
+    margin-bottom: 0.5em; }
+  .footer a {
+    color: #ccc;
+    font-weight: bold; }
 
-.footer-zurb {
-  padding-bottom: 2em;
-  text-align: center;
-  line-height: 3em; }
-  .footer-zurb a {
-    color: #ffffff;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-size: 1.25rem;
-    text-align: center;
-    font-weight: 100; }
-    .footer-zurb a:hover {
-      color: #96e4b8; }
-  .footer-zurb h5 {
-    font-size: 1rem;
-    padding-top: 3em;
-    padding-bottom: 1.1em;
-    color: #ffffff;
-    font-weight: 800;
-    text-align: center; }
+.footer__logo {
+  height: 2em;
+  margin-bottom: 1em; }
 
-.footer-zurb1 a {
-  color: #ffffff;
-  font-weight: 600;
-  letter-spacing: 1px;
-  font-size: 1rem;
-  text-align: center;
-  font-weight: 100; }
-  .footer-zurb1 a:hover {
-    color: #96e4b8; }
-.footer-zurb1 h5 {
-  color: #ffffff;
-  font-weight: 100;
-  text-align: center;
-  font-size: 1.125rem; }
+.footer__lower {
+  background: #222;
+  margin-top: 2em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em; }
 
 .gif-searcher {
   -webkit-transition: height 1s linear; }
@@ -6080,8 +6065,7 @@ input.congrats__url {
 
 .header {
   *zoom: 1;
-  background: #ff7150;
-  margin-bottom: 3em; }
+  background: #ff7150; }
   .header:before, .header:after {
     content: " ";
     display: table; }
@@ -6154,6 +6138,9 @@ input.congrats__url {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover; }
+
+.profile {
+  padding-top: 3em; }
 
 @media only screen and (max-width: 40em) {
   .profile__header {

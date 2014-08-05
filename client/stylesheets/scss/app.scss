@@ -12,9 +12,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.main-wrapper {
+  clear:both;
+}
+
 .rafi-box {
   background: #fff url('../images/PartyPartyParty.png') left bottom fixed no-repeat;
   background-size: auto 100%;
+  clear: both;
 }
 
 .button {

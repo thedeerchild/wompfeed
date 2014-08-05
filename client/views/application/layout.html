@@ -1,6 +1,8 @@
 <template name="layout">
   {{> header}}
-  {{> yield}}
+  <div class="main-wrapper">
+    {{> yield}}
+  </div>
   {{> footer}}
   {{initFoundation}}
 </template>
