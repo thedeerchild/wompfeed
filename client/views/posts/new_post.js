@@ -15,7 +15,7 @@ Template.newPost.events({
         alert(error.reason);
       } else {
         Session.set('postFirstView', id);
-        Router.go('showPost', {_id: id});
+        Router.go('showPost', {_id: id}, {hash: '#first-view'});
       }
     });
   }

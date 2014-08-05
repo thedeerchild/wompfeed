@@ -22,8 +22,9 @@ Template.showPost.events({
 
 Template.showPost.rendered = function() {
   $('.congrats').hide()
-  if (!!Session.get('postFirstView')) {
+  if (window.location.hash === '#first-view') {
     Meteor.setTimeout(function(){
+      Router.go(window.location.href.split('#')[0]);
       $('.congrats').fadeIn('slow');
     }, 500);
 
