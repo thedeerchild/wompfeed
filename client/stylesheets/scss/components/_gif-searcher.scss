@@ -31,8 +31,23 @@
   height: 300px;
   overflow-y: scroll;
 
+  .again {
+    float: left;
+    line-height: 30px;
+    color: white;
+
+    &:hover { color: #eee; }
+  }
+  .giphy {
+    display: block;
+    float: right;
+    height: 30px;
+    margin-bottom: 1em;
+  }
+
   ul {
     @include block-grid(3);
+    clear: both;
   }
 }
 .gif-searcher__show {

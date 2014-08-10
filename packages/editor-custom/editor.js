@@ -186,6 +186,10 @@ GIFSearcher.prototype = {
       _this.views.image.children('img').attr('src', '');
       _this.showSearch();
     });
+
+    this.views.results.on('click', '.again', function() {
+      _this.showSearch();
+    });
   },
 
   showSearch: function() {
@@ -237,7 +241,7 @@ GIFSearcher.prototype = {
             query = encodeURI(query.replace(" ","+"));
             
             var queryURL = 'http://api.giphy.com/v1/gifs/search'
-            , params   = {q: query, limit: 24, api_key: 'dc6zaTOxFJmzC'}
+            , params   = {q: query, limit: 48, api_key: 'dc6zaTOxFJmzC'}
             
             var search = $.getJSON(queryURL, params);
             return search;
